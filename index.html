@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jukebox</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+<div class='box'>
+	<div class='previous'></div>
+	<div class='pause'></div>
+	<div class='play'></div>
+	<div class='next'></div>	
+	<div class='random'> </div> <!--(maybe?)-->
+</div>
+
+<audio>
+	<source id = "song1" src="audio/90-seconds.mp3" type="audio/mp3">
+	<source id = "song2" src="audio/acid-jazz.mp3" type="audio/mp3">
+	<source id = "song3" src="audio/biggie.mp3" type="audio/mp3">
+	<source id = "song4" src="audio/feel-the-funk.mp3" type="audio/mp3">
+	<source id = "song5" src="audio/keep-it-tight.mp3" type="audio/mp3">
+	<source is = "song6" src= "audio/the-big-score.mp3" type="audio/mp3">
+</audio>
+
+<!-- 90 Seconds of Funk by Audionautix is licensed under a Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/)
+Artist: http://audionautix.com/ -->
+
+<!-- Acid Jazz by Kevin MacLeod is licensed under a Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/)
+Source: https://freemusicarchive.org/music/Kevin_MacLeod/Jazz_Sampler/AcidJazz_1430
+Artist: http://incompetech.com/ -->
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+
+<!-- Jukebox Starter Kit Workshop: Individual
+Goal:
+
+Demonstrate understanding of objects in JavaScript.
+
+Assignment:
+
+This Starter Kit workshop is designed for you to create the foundation for your next project! You've had a bit of time to get familiar with object oriented JavaScript. Now let’s build a Jukebox!
+
+You will build a music player that will end up playing any mp3 you can find online. Think about what functionality you might need for this to work. Encapsulate all of this functionality in a JavaScript object so that starting a song is as simple as calling Jukebox.play() You need an array of song objects and the ability to play, stop and pause a song. How would you switch songs? Can you shuffle songs? Focus on getting the JavaScript to work and keep the HTML/CSS minimal, make it work before you make it look good!
+
+Before you Begin:
+
+Read through this tutorial describing how to use html5 audio (Links to an external site.)Links to an external site. and control playback using javascript.
+
+Your JavaScript Jukebox should:
+
+Display at least one song on the page when the page loads
+Give the user the ability to play that song, without using the "built-in" play button. This could be through a different button, through clicking or mousing over an image on the page, or any other device of your choosing.
+Give the user the ability to stop that song without using the "built-in" stop button. Once again, this could be through a different button, through clicking or mousing over an image on the page, or any other device of your choosing.
+Give the user the ability to load at least one different song into the Jukebox besides the one that is loaded when the page initially renders
+The whole Jukebox should be backed by an object called Jukebox with methods to play, stop, and load songs.
+
+Extra Challenge:
+
+Playlist of songs, allows the user to queue up the next song
+Feature to request a random song
+
+Grading Criteria:
+
+JS throws no errors
+Pause, Play, and Stop functions work (and do not use built in functionality)
+JukeBox has working Next button. When you get to the end of the songlist JukeBox returns to the first song
+JukeBox is object-oriented -->
