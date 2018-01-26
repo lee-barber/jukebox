@@ -1,0 +1,93 @@
+.container {
+    width: 800px;
+    height: 400px;
+    border-radius: 25px;
+    background-image: url('img/graffiti.png');
+    background-size: cover;
+    border: 5px solid black;
+    padding: 0px;
+    margin: 10% auto;
+}
+
+.box {
+    width: 540px;
+    height: 100px;
+    border-radius: 25px;
+    background-color: black;
+    border: 15px solid black;
+    padding: 0px;
+    margin: 10% auto;
+}
+
+.previous {
+	background-image: url('img/previous.png');
+	background-size: cover;
+	background-color: blue;
+	border-radius: 25px;
+	float: left;
+    width: 80px;
+    height: 80px;
+    border: 10px solid blue;
+    padding: 0px;
+    margin-right: 10px;
+}
+
+.pause {
+	background-image: url('img/pause.png');
+	background-size: cover;
+	background-color: yellow;
+	border-radius: 25px;
+	float: left;
+    width: 80px;
+    height: 80px;
+    border: 10px solid yellow;
+    padding: 0px;
+  	margin-right: 10px;
+}
+
+.play {
+	background-image: url('img/play.png');
+	background-size: cover;
+	background-color: green;
+	border-radius: 25px;
+	float: left;
+    width: 80px;
+    height: 80px;
+    border: 10px solid green;
+    padding: 0px;
+    margin-right: 10px;
+}
+
+.stop {
+	background-image: url('img/stop.png');
+	background-size: cover;
+	background-color: red;
+	border-radius: 25px;
+	float: left;
+    width: 80px;
+    height: 80px;
+    border: 10px solid red;
+    padding: 0px;
+    margin-right: 10px;
+}
+
+.next {
+	background-image: url('img/next.png');
+	background-size: cover;
+	background-color: purple;
+	border-radius: 25px;
+	float: left;
+    width: 80px;
+    height: 80px;
+    border: 10px solid purple;
+    padding: 0px;
+}
+
+.songPath {
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    width: 400px;
+    height: 25px;
+    margin: 0 auto;
+}
