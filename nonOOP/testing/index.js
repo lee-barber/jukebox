@@ -1,5 +1,3 @@
-// TESTING
-
 var previousButton = document.querySelector(".previous")
 var pauseButton = document.querySelector(".pause")
 var stopButton = document.querySelector(".stop")
@@ -8,12 +6,9 @@ var nextButton = document.querySelector(".next")
 var songs = ['audio/acid-jazz.mp3', 'audio/the-big-score.mp3', 'audio/90-seconds.mp3','audio/biggie.mp3', 'audio/feel-the-funk.mp3', 'audio/keep-it-tight.mp3']
 var audioFunctions = new Audio()
 var index = 0;
-var path = document.querySelector(".songPath")
-
-var nextSong = document.querySelector(".upNext")
-nextSong.innerHTML = "Next song up: " + songs[index]
-
 audioFunctions.src = songs[index]
+var path = document.querySelector(".songPath")
+var nextSong = document.querySelector(".upNext")
 
 previousButton.addEventListener("click", function(){
 	if (index == 0){
@@ -23,7 +18,13 @@ previousButton.addEventListener("click", function(){
 		index--;
 	}
 	audioFunctions.src = songs[index];
-	path.innerHTML = songs[index]
+	nextSong.innerHTML = songs[index]
+	if (index == songs.length+1){
+		index = 0;
+	}
+	else {
+		index++;
+	}
 	audioFunctions.play();
 	path.innerHTML = "You are listening to: " + songs[index];
 })
