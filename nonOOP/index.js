@@ -22,11 +22,16 @@ var audioFunctions = new Audio()
 var index = 0;
 // sets the variable 'index' (for the list of songs) to start at 0--why?--the index is set to 0 so that later in the code, the index can be referenced and moved up and down as opposed to setting the index to one fixed value that can't (or easily) be changed
 
-audioFunctions.src = songs[index]
-// defines the object 'audioFunctions' to equal the source for list of songs with an array equal to the variable named 'index' (with a value of 0)
-
 var path = document.querySelector(".songPath")
 // creates a variable named 'path' that uses DOM Manipulation to target the HTML and select the class 'songPath' using the native JS method 'querySelector' (instead of 'getElementbyID' or 'getElementByClassName'--the 'querySelector' allows you to choose either an ID or a Class using the same method, 'querySelector')
+
+var nextSong = document.querySelector(".upNext")
+	nextSong.innerHTML = "Next song up: " + songs[index+1]
+	nextSong.style.color = "blue"
+	nextSong.style.fontSize = "20px"
+
+audioFunctions.src = songs[index]
+// defines the object 'audioFunctions' to equal the source for list of songs with an array equal to the variable named 'index' (with a value of 0)
 
 previousButton.addEventListener("click", function(){
 	if (index == 0){
@@ -51,30 +56,46 @@ previousButton.addEventListener("click", function(){
 pauseButton.addEventListener("click", function(){
 	audioFunctions.pause();
 	path.innerHTML = "You are listening to: " + songs[index];
+// calls the class 'pauseButton' via DOM Manipulation to do the following operations upon the targeted HTML div class 'pause' upon being clicked:
+// 1) pause the audio via the native JS method '.pause' and
+// 2) target the variable 'path' (which points to the Class '.songPath') to print the string text "You are listneing to" concatonated with the current song at the array [index] (the indicies varies because it starts a 0 but changes if 'next' or 'previous' is clicked)
 })
 
 stopButton.addEventListener("click", function(){
 	audioFunctions.pause();
-// uses native Audio method in JS '.pause' to pause the audio on the variable 'audioFunctions'
+// uses native Audio method in JS '.pause' to pause the audio from the variable 'audioFunctions' (which = the object Audio)
 	audioFunctions.currentTime = 0;
+// assigns the object 'audioFunctions' native JS method 'currentTime' to equal 0
 })
 
 playButton.addEventListener("click", function(){
 	audioFunctions.play();
+// uses native Audio method in JS '.play' to play the audio from the variable 'audioFunctions' (which = the object Audio)
 	path.innerHTML = "You are listening to: " + songs[index];
+// calls the 'path' variable and links it to the HTML (via 'innerHTML') then tells it to print the string text concatonated with the variable 'songs' set to the array 'index' (which = 0)
 	path.style.color = "red"
+// calls the 'path' variable and links it to the HTML (via 'innerHTML') then tells it to set the style color to red (doesn't work via CSS...)
 	path.style.fontSize = "20px"
+// calls the 'path' variable and links it to the HTML (via 'innerHTML') then tells it to set the style font size to 20px (doesn't work via CSS...)
 })
-	
+
 nextButton.addEventListener("click", function(){
+// calls the variable 'nextButton' via DOM Manipulation to do the following operations upon the targeted HTML div class 'next' upon being clicked:
 	if (index == songs.length-1){
-		index = 0;
+// if the index value is equal to the variable 'songs' length minus 1, then:
+		index = 0; 
+// set the index to 0 (there are 6 songs in the array but because arrays are counted starting at index 0, the 6th/last song is counted as index 5.  This if statement is true when the last index (5) is set to the 'song' array length minus 1 (songs.length-1 = 5).  In other words, IF song.length=6 AND index=5 (6-5=5)... THEN 5=5 (true), THEN set index to 0)
+		nextSong.innerHTML = "Next song up: " + songs[index]
+// calls the 'nextSong' variable and links it to the HTML (via 'innerHTML') then tells it to print the string text concatonated with the variable 'songs' set to the array 'index' (which = 0)
 	}
 	else {
+		nextSong.innerHTML = "Next song up: " + songs[index+2]
+// if the above condition is not true (it isn't the last song in the array) then advance the song to the next track
 		index++;
 	}
 	audioFunctions.src = songs[index];
 	audioFunctions.play();
 	path.innerHTML = songs[index];
 	path.innerHTML = "You are listening to: " + songs[index];
-})
+	})
+
